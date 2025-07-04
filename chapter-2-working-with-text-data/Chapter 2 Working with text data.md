@@ -14,7 +14,7 @@ During the **pre-training stage**, LLMs **process** text **one word at a time**.
 
 Training LLMs with millions to billions of parameters using a next-word prediction task **yields** models with impressive capabilities.
 
-![image-20250701122446996](/Users/y/project/ai/build-a-large-language-model-from-scratch/chapter-2-working-with-text-data/assets/image-20250701122446996.png)
+![image-20250701122446996](./assets/image-20250701122446996.png)
 
 **Why we need word embeddings?**
 
@@ -50,13 +50,13 @@ To map previously generated **tokens** into **token IDs**, we have to build a **
 
 This vocabulary defines **how** we map each **unique word** and special character to a **unique integer**.
 
-![image-20250701215534138](/Users/y/project/ai/build-a-large-language-model-from-scratch/chapter-2-working-with-text-data/assets/image-20250701215534138.png)
+![image-20250701215534138](./assets/image-20250701215534138.png)
 
 ## 2.6 Data sampling with a Sliding window
 
 Generate the **input**–**target** pairs
 
-![image-20250703225815630](/Users/y/project/ai/build-a-large-language-model-from-scratch/chapter-2-working-with-text-data/assets/image-20250703225815630.png)
+![image-20250703225815630](./assets/image-20250703225815630.png)
 
 **inputs** and **targets** as PyTorch tensors,  which can be thought of as multidimensional arrays.
 
@@ -64,7 +64,7 @@ Generate the **input**–**target** pairs
 
  Convert the **token ID**s into **embedding vector**s
 
-![image-20250703230409287](/Users/y/project/ai/build-a-large-language-model-from-scratch/chapter-2-working-with-text-data/assets/image-20250703230409287.png)
+![image-20250703230409287](./assets/image-20250703230409287.png)
 
 We must **initialize** these **embedding weight**s with **random values.**
 
@@ -76,4 +76,4 @@ We must **initialize** these **embedding weight**s with **random values.**
 
 However, a minor **shortcoming** of LLMs is that their self-attention mechanism (see chapter 3) **doesn’t** have a **notion of position or order** for the tokens within a sequence. The way the previously introduced embedding layer works is that the same token ID always gets mapped to the same vector representation, regardless of where the token ID is positioned in the input sequence
 
-![image-20250703232431143](/Users/y/project/ai/build-a-large-language-model-from-scratch/chapter-2-working-with-text-data/assets/image-20250703232431143.png)
+![image-20250703232431143](./assets/image-20250703232431143.png)
